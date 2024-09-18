@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,5 +22,22 @@ function App() {
     </div>
   );
 }
+
+export default App;*/
+// src/App.tsx
+
+import React from 'react';
+import { HomePage } from './pages/HomePage';
+
+// アプリケーションのルートコンポーネント
+const App: React.FC = () => {
+  return (
+    // 最小高さを画面全体に設定し、背景色をグレーに
+    <div className="min-h-screen bg-gray-100">
+      {/* ホームページコンポーネントをレンダリング */}
+      <HomePage />
+    </div>
+  );
+};
 
 export default App;
