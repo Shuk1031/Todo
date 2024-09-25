@@ -36,25 +36,25 @@ import { FilterBar } from './components/FilterBar';
 const App: React.FC = () => {
   return (
     <Router>
-      <div>
-        <header>
-          <div>
-            <h1>ToDoアプリ</h1>
-            <nav>
-              <Link to="/">TaskList</Link>
-              <Link to="/Form">TaskForm</Link>
+      <div className="min-h-screen bg-gray-100">
+        <header className="bg-gray-800 text-white p-4">
+          <div className="max-w-7xl mx-auto flex justify-between">
+            <h1 className="text-xl font-bold">ToDoアプリ</h1>
+            <nav className="flex space-x-4">
+              <Link to="/" className="hover:underline">TaskList</Link>
+              <Link to="/Form" className="hover:underline">TaskForm</Link>
             </nav>
           </div>
         </header>
 
-        <div>
+        <div className="max-w-7xl mx-auto py-8 px-4">
           <Routes>
             <Route path="/Form" element={<TaskForm/>}/>
             <Route path="/" element={<TaskList/>}/>
           </Routes>
         </div>
-        <div>
-          <aside>
+        <div className="min-h-screen flex flex-col md:flex-row bg-gray-100 p-6">
+          <aside className="w-full md:w-1/4 bg-white p-6 rounded-lg shadow-lg mb-6 md:mb-0">
             <FilterBar/>
           </aside>
         </div>
