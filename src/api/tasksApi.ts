@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Task } from '../types'; // Task 型をインポート
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:3001/api/tasks';
+const API_URL = process.env.REACT_APP_API_URL || 'https://todo-api-2024-7281df175d4e.herokuapp.com/api/tasks';
 
 export const fetchTasks = async (): Promise<Task[]> => {
   try {
