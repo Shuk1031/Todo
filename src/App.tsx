@@ -27,16 +27,42 @@ export default App;*/
 // src/App.tsx
 
 import React from 'react';
-import { HomePage } from './pages/HomePage';
+import {BrowserRouter as Router, Route, Routes , Link} from 'react-router-dom'
+import { TaskList } from './components/TaskList';
+import { TaskForm } from './components/TaskForm';
+import { FilterBar } from './components/FilterBar';
 
 // アプリケーションのルートコンポーネント
 const App: React.FC = () => {
   return (
-    // 最小高さを画面全体に設定し、背景色をグレーに
-    <div className="min-h-screen bg-gray-100">
-      {/* ホームページコンポーネントをレンダリング */}
-      <HomePage />
-    </div>
+    <Router>
+      <div>
+        <header>
+          <div>
+            <h1>ToDoアプリ</h1>
+            <nav>
+              <Link to="/">TaskList</Link>
+              <Link to="/Form">TaskForm</Link>
+            </nav>
+          </div>
+        </header>
+
+        <div>
+          <Routes>
+            <Route path="/Form" element={<TaskForm/>}/>
+            <Route path="/" element={<TaskList/>}/>
+          </Routes>
+        </div>
+        <div>
+          <aside>
+            <FilterBar/>
+          </aside>
+        </div>
+      </div>
+
+    </Router>
+    
+    
   );
 };
 
