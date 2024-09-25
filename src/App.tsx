@@ -28,8 +28,8 @@ export default App;*/
 
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes , Link} from 'react-router-dom'
-import { TaskList } from './components/TaskList';
-import { TaskForm } from './components/TaskForm';
+import  TaskList  from './components/TaskList';
+import  TaskForm  from './components/TaskForm';
 
 // アプリケーションのルートコンポーネント
 const App: React.FC = () => {
