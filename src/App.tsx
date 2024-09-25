@@ -30,7 +30,6 @@ import React from 'react';
 import {BrowserRouter as Router, Route, Routes , Link} from 'react-router-dom'
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
-import { FilterBar } from './components/FilterBar';
 
 // アプリケーションのルートコンポーネント
 const App: React.FC = () => {
@@ -47,17 +46,13 @@ const App: React.FC = () => {
           </div>
         </header>
 
-        <div className="max-w-7xl mx-auto py-8 px-4">
+        <main className="max-w-7xl mx-auto py-8 px-4">
           <Routes>
             <Route path="/Form" element={<TaskForm/>}/>
             <Route path="/" element={<TaskList/>}/>
           </Routes>
-        </div>
-        <div className="min-h-screen flex flex-col md:flex-row bg-gray-100 p-6">
-          <aside className="w-full md:w-1/4 bg-white p-6 rounded-lg shadow-lg mb-6 md:mb-0">
-            <FilterBar/>
-          </aside>
-        </div>
+        </main>
+      
       </div>
 
     </Router>
