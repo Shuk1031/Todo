@@ -11,6 +11,7 @@ const useTasks = () => {
     const getTasks = async () => {
       try {
         const fetchedTasks = await tasksApi.fetchTasks();
+        console.log('fetchedTasks:', fetchedTasks); 
         setTasks(fetchedTasks);
       } catch (err) {
         console.error('タスクの取得に失敗しました:', err);

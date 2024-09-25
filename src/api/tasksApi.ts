@@ -6,9 +6,11 @@ const API_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:3001/api/task
 export const fetchTasks = async (): Promise<Task[]> => {
   try {
     const response = await axios.get<Task[]>(API_URL);
+    console.log('API response:', response);
     return response.data;
   } catch (error) {
     console.error('タスクの取得に失敗しました:', error);
+
     throw error;
   }
 };
